@@ -1,11 +1,17 @@
 import React from "react";
 
-function Card({ imageUrl, title }) {
+function Card({ imageUrl, title, buttonPress }) {
   const styles = { width: "18rem" };
 
   return (
-    <div className="card m-3" style={styles}>
-      <img src={imageUrl} className="card-img-top" alt="..." />
+    <div key={title} className="card m-3" style={styles}>
+      <img
+        src={imageUrl}
+        onClick={() => buttonPress(title)}
+        className="card-img-top"
+        alt="..."
+      />
+
       <div className="card-body">
         <h5 className="card-title">{title}</h5>
       </div>
